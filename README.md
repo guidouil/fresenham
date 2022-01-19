@@ -19,7 +19,7 @@ This module covers all the possible scenarios of a line
 
 Method require 5 float `(startX, startY, endX, endY, step)` as parameters. It returns an array of objects `{x, y}`. If you ommit the step parameter, it will be setted to the default value of `1`.
 
-To get the coordinates of line from (0, 5.5) to (-1, 6) with a step of 1 use below code
+To get the coordinates of line from (0, 5.5) to (-1, 6) with a step of 0.25 use below code
 
 ```js
 import { drawLine } from "fresenham";
