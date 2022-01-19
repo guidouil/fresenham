@@ -1,5 +1,5 @@
-exports.draw = (startX, startY, endX, endY, step = 1) => {
-  const outputArray = [];
+exports.drawLine = (startX, startY, endX, endY, step = 1) => {
+  const pixels = [];
   const dx = endX - startX;
   const dy = endY - startY;
   const adx = (Math.abs(dx) + step) * 2;
@@ -9,7 +9,7 @@ exports.draw = (startX, startY, endX, endY, step = 1) => {
   if (adx > ady) {
     let eps = (ady - adx) / 2;
     for (let x = startX, y = startY; sx < 0 ? x >= endX : x <= endX; x += sx) {
-      outputArray.push({ x, y });
+      pixels.push({ x, y });
       eps += ady;
       if (eps * 2 >= adx) {
         y += sy;
@@ -19,7 +19,7 @@ exports.draw = (startX, startY, endX, endY, step = 1) => {
   } else {
     let eps = (adx - ady) / 2;
     for (let x = startX, y = startY; sy < 0 ? y >= endY : y <= endY; y += sy) {
-      outputArray.push({ x, y });
+      pixels.push({ x, y });
       eps += adx;
       if (eps * 2 >= ady) {
         x += sx;
@@ -27,5 +27,5 @@ exports.draw = (startX, startY, endX, endY, step = 1) => {
       }
     }
   }
-  return outputArray;
+  return pixels;
 };

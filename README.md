@@ -2,7 +2,7 @@
 
 # Fresenham
 
-This Node.js library (support TypeScript) will calculate a variation of Bresenham's line algorithm for a given 2 end points that can have a float values. You need to pass extra `step` (pixel width) parameter in that case.
+This Node.js library (support TypeScript) will calculate a variation of Bresenham's line algorithm for 2 points that can have float values for x and y. You have to pass the extra `step` (pixel width) parameter in this case.
 
     npm install fresenham
 
@@ -23,7 +23,12 @@ To get the coordinates of line from (1,3) to (7,11) with a step of 1 use below c
 
 ```js
 let fresenham = require("fresenham");
-let pointsList = fresenham.draw(0, 5.5, -1, 6, 0.25);
+let pointsList = fresenham.drawLine(0, 5.5, -1, 6, 0.25);
+
+// OR
+
+import { drawLine } from "fresenham";
+const linePoints = drawLine(0, 5.5, -1, 6, 0.25);
 ```
 
 The above code snippet returns array of objects as below
@@ -48,6 +53,15 @@ for (const point of pointsList) {
 }
 ```
 
+## Testing
+
+To run test, clone the repository and in project do the following commands
+
+```sh
+npm install
+npm test
+```
+
 ## References
 
-This was inspired by (copied from) the excellent work from [Steve Johns](https://www.middle-engine.com/blog/posts/2020/07/28/bresenhams-line-algorithm)
+This bresenham variation was inspired by (copied from) the excellent work from [Steve Johns](https://www.middle-engine.com/blog/posts/2020/07/28/bresenhams-line-algorithm).

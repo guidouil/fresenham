@@ -1,7 +1,7 @@
 {
   "name": "fresenham",
-  "version": "1.0.0",
-  "description": "Bresenham line drawing algorithm variation with a step parameter for float compatibility",
+  "version": "1.0.1",
+  "description": "Bresenham line drawing algorithm variation with a step parameter for floats compatibility",
   "main": "src/index.js",
   "typings": "src/index.d.ts",
   "scripts": {

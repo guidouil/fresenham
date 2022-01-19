@@ -14,7 +14,7 @@ describe("fresenham", () => {
       { x: 2, y: 9 },
     ];
 
-    expect(fresenham.draw(2, 2, 2, 9)).to.deep.equal(res);
+    expect(fresenham.drawLine(2, 2, 2, 9)).to.deep.equal(res);
   });
   it("should return correct array - Horizontal", () => {
     const res = [
@@ -26,7 +26,7 @@ describe("fresenham", () => {
       { x: 8, y: 2 },
     ];
 
-    expect(fresenham.draw(3, 2, 8, 2)).to.deep.equal(res);
+    expect(fresenham.drawLine(3, 2, 8, 2)).to.deep.equal(res);
   });
   it("should return correct array - Diagonal", () => {
     const res = [
@@ -38,7 +38,7 @@ describe("fresenham", () => {
       { x: 8, y: 7 },
     ];
 
-    expect(fresenham.draw(3, 2, 8, 7)).to.deep.equal(res);
+    expect(fresenham.drawLine(3, 2, 8, 7)).to.deep.equal(res);
   });
   it("should return correct array - slope > 1", () => {
     const res = [
@@ -50,7 +50,7 @@ describe("fresenham", () => {
       { x: 6, y: 8 },
     ];
 
-    expect(fresenham.draw(10, 3, 6, 8)).to.deep.equal(res);
+    expect(fresenham.drawLine(10, 3, 6, 8)).to.deep.equal(res);
   });
   it("should return correct array - startX > endX", () => {
     const res = [
@@ -59,7 +59,7 @@ describe("fresenham", () => {
       { x: 1, y: 4 },
     ];
 
-    expect(fresenham.draw(3, 5, 1, 4)).to.deep.equal(res);
+    expect(fresenham.drawLine(3, 5, 1, 4)).to.deep.equal(res);
   });
   it("should return correct array - slope < 0", () => {
     const res = [
@@ -76,7 +76,7 @@ describe("fresenham", () => {
       { x: 12, y: -2 },
     ];
 
-    expect(fresenham.draw(2, 2, 12, -2)).to.deep.equal(res);
+    expect(fresenham.drawLine(2, 2, 12, -2)).to.deep.equal(res);
   });
   it("should return correct array - 1 > slope > 0", () => {
     const res = [
@@ -93,7 +93,7 @@ describe("fresenham", () => {
       { x: 12, y: 9 },
     ];
 
-    expect(fresenham.draw(2, 2, 12, 9)).to.deep.equal(res);
+    expect(fresenham.drawLine(2, 2, 12, 9)).to.deep.equal(res);
   });
   it("should return correct array - Floats", () => {
     const res = [
@@ -104,6 +104,6 @@ describe("fresenham", () => {
       { x: -1, y: 6 },
     ];
 
-    expect(fresenham.draw(0, 5.5, -1, 6, 0.25)).to.deep.equal(res);
+    expect(fresenham.drawLine(0, 5.5, -1, 6, 0.25)).to.deep.equal(res);
   });
 });
