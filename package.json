@@ -1,0 +1,29 @@
+{
+  "name": "fresenham",
+  "version": "1.0.0",
+  "description": "Bresenham line drawing algorithm variation with a step parameter for float compatibility",
+  "main": "src/index.js",
+  "typings": "src/index.d.ts",
+  "scripts": {
+    "test": "mocha"
+  },
+  "author": "Guillaume Darbonne",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/guidouil/fresenham.git"
+  },
+  "keywords": [
+    "bresenham",
+    "bresenham step",
+    "bresenham float",
+    "bresenham pixel width",
+    "javascript bresenham float"
+  ],
+  "homepage": "https://github.com/guidouil/fresenham#readme",
+  "license": "ISC",
+  "devDependencies": {
+    "chai": "^4.3.4",
+    "mocha": "^9.1.4"
+  },
+  "dependencies": {}
+}
