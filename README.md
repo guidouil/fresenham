@@ -2,7 +2,7 @@
 
 # Fresenham
 
-This Node.js library (support TypeScript) will calculate a variation of Bresenham's line algorithm for 2 points that can have float values for x and y. You have to pass the extra `step` (pixel width) parameter in this case.
+This Node.js library (support TypeScript) will calculate a variation of Bresenham's line algorithm for 2 points that can have float values for x and y. You have to pass the extra `step` (pixel width) parameter in this case. You can also set the step to a large integer like 25 to accommodate to a specific width of axes.
 
     npm install fresenham
 
@@ -19,16 +19,16 @@ This module covers all the possible scenarios of a line
 
 Method require 5 float `(startX, startY, endX, endY, step)` as parameters. It returns an array of objects `{x, y}`. If you ommit the step parameter, it will be setted to the default value of `1`.
 
-To get the coordinates of line from (1,3) to (7,11) with a step of 1 use below code
+To get the coordinates of line from (0, 5.5) to (-1, 6) with a step of 1 use below code
 
 ```js
-let fresenham = require("fresenham");
-let pointsList = fresenham.drawLine(0, 5.5, -1, 6, 0.25);
+import { drawLine } from "fresenham";
+const linePoints = drawLine(0, 5.5, -1, 6, 0.25);
 
 // OR
 
-import { drawLine } from "fresenham";
-const linePoints = drawLine(0, 5.5, -1, 6, 0.25);
+const fresenham = require("fresenham");
+const linePoints = fresenham.drawLine(0, 5.5, -1, 6, 0.25);
 ```
 
 The above code snippet returns array of objects as below
@@ -43,14 +43,13 @@ The above code snippet returns array of objects as below
 ];
 ```
 
-You can access points using below code
+You can access each point using below code
 
 ```js
-for (const point of pointsList) {
-  x = point.x;
-  y = point.y;
-  // ...
-}
+linePoints.forEach((point) => {
+  const { x, y } = point;
+  //...
+});
 ```
 
 ## Testing
